@@ -5,3 +5,10 @@ def mykal():
 		print(i)
 
 mykal()
+
+def thi():
+	kal=45
+	ash=78
+	sri=kal*ash
+	for x in sri:
+		print(x , end="")
