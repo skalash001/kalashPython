@@ -2,7 +2,7 @@ print("hello world")
 def mykal():
 	hu='kalash srivastava'
 	for i in hu:
-		print(i)
+		print(i,end="")
 
 mykal()
 
@@ -12,3 +12,6 @@ def thi():
 	sri=kal*ash
 	for x in sri:
 		print(x , end="")
+
+
+
