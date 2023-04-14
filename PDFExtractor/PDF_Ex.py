@@ -10,10 +10,7 @@ num_pages = pdf_file.page_count
 # Prompt the user for a page number to extract
 page_num = int(input(f"Enter a page number to extract (1-{num_pages}): ")) - 1
 
-# Check if the page number is valid
-if page_num < 0 or page_num >= num_pages:
-    print(f"Invalid page number. Please enter a number between 1 and {num_pages}.")
-else:
+if 0 <= page_num < num_pages:
     # Extract the specific page
     page = pdf_file[page_num]
 
@@ -23,10 +20,13 @@ else:
     # Save the extracted page to a new PDF file
     new_pdf = fitz.open()
     new_pdf.insert_pdf(pdf_file, from_page=page_num, to_page=page_num)
-    new_pdf.save(os.path.join('G:\\PDF_Extractor\\Extracted', filename))
+    new_pdf.save(os.path.join('G:\\PDF_Extractor\\kalashPython\\Extracted', filename))
     new_pdf.close()
 
     # Close the files
     pdf_file.close()
 
     print(f"Page {page_num + 1} has been extracted and saved as {filename}.")
+# Check if the page number is valid
+else:
+    print(f"Invalid page number. Please enter a number between 1 and {num_pages}.")
